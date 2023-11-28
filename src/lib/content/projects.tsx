@@ -23,7 +23,7 @@ export const ProjectItem: FC<ProjectItemProps> = ({
 }) => {
     return (
         <li>
-            <p className="mb-2 text-sm uppercase text-zinc-400/80">{kind}</p>
+            <p className="mb-2 text-sm uppercase text-stone-400/80">{kind}</p>
             <a
                 href={liveUrl}
                 target="_blank"
@@ -55,28 +55,27 @@ export const ProjectsSection: FC = () => {
                         title="Meldnotes"
                         liveUrl="https://meldnotes.com"
                         gitHubUrl="https://github.com/brendanjcarlson/meldnotes"
-                        description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto necessitatibus saepe
-                            soluta ab quas, voluptas id eius! Quisquam, sapiente optio."
+                        description="A note-taking application with an emphasis on organizing and connecting notes in an intuitive way."
                         imageUrl="https://picsum.photos/300/200"
                         skills={["Next.js", "TypeScript", "TailwindCSS", "Supabase"]}
                     />
                     <ProjectItem
                         kind="Web application"
-                        title="PokéBattle"
-                        liveUrl="https://pokebattle.onrender.com"
-                        gitHubUrl="https://github.com/brendanjcarlson/pokebattle"
-                        description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto necessitatibus saepe soluta ab quas, voluptas id eius! Quisquam, sapiente optio."
+                        title="PocketPulse"
+                        liveUrl="https://pocketpulse.onrender.com"
+                        gitHubUrl="https://github.com/brendanjcarlson/pocketpulse"
+                        description="A clean and minimalistic budgeting application designed to make managing expenses easy."
                         imageUrl="https://picsum.photos/300/200"
-                        skills={["Python", "Flask", "SCSS", "PostgreSQL", "HTMX"]}
+                        skills={["Python", "Flask", "TailwindCSS", "PostgreSQL", "HTMX"]}
                     />
                     <ProjectItem
                         kind="API"
                         title="Shop API"
                         liveUrl="https://shop-api.onrender.com"
                         gitHubUrl="https://github.com/brendanjcarlson/shop-api"
-                        description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto necessitatibus saepe soluta ab quas, voluptas id eius! Quisquam, sapiente optio."
+                        description="A free API for developers to use while learning how to build e-commerce applications."
                         imageUrl="https://picsum.photos/300/200"
-                        skills={["Golang", "Fiber", "PostgreSQL", "Docker", "Stripe"]}
+                        skills={["Golang", "PostgreSQL", "Docker", "AWS"]}
                     />
                 </ul>
             </SectionContent>

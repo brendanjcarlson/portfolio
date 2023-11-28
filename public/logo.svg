@@ -1,0 +1,12 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xlmns="http://www.w3.org/2000/svg" fill="none">
+    <g>
+        <path d='M 0 0 L 0 512 L 20 512 L 20 20 L 256 20 L 256 0 Z' fill="red" id="left-border-path" />
+    </g>
+
+    <g>
+        <path d="M 44 32 L 190 32 L 162 56 L 72 56 Z" fill="orange" />
+        <path d="M 44 32 L 44 80 L 72 56 Z" fill="azure" />
+        <path d="M 44 108 L 72 84 L 72 240 L 44 268 Z" fill="azure" />
+        <path d="M 44 294 L 72 266 L 72 486 L 168 486 C 215 486 256 426 256 386 L 256 445 C 251 477 210 514 151 512 L 44 512 Z" fill="beige" />
+    </g>
+</svg>

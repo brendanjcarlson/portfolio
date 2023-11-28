@@ -10,7 +10,7 @@ export const SkillsCloud: FC<SkillsCloudProps> = ({ skills }) => {
             {skills.map((skill) => (
                 <li
                     key={skill}
-                    className="rounded-full bg-indigo-300/20 px-4 py-1 text-sm text-indigo-200/80"
+                    className="rounded-full bg-emerald-400/20 px-4 py-1.5 text-xs text-emerald-300"
                 >
                     {skill}
                 </li>

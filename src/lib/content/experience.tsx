@@ -1,23 +1,40 @@
+import { SkillsCloud } from "@/lib//components/skill-cloud";
+import { HeadingTwo } from "@/lib/components/typography";
+import { ArrowTopRightIcon, DownloadIcon } from "@radix-ui/react-icons";
 import clsx from "clsx";
 import Link from "next/link";
 import { FC } from "react";
-import { Section } from "../components/layout";
-import { SkillsCloud } from "../components/skill-cloud";
 
 export interface DateRangeProps {
-    fromMonth?: string;
-    fromYear?: string;
-    toMonth?: string;
-    toYear?: string;
+    fromMeta: string;
+    fromMonth: string;
+    fromYear: string;
+    toMeta: string;
+    toMonth: string;
+    toYear: string;
     className?: string;
 }
-export const DateRange: FC<DateRangeProps> = ({ fromMonth, fromYear, toMonth, toYear, className }) => {
+export const DateRange: FC<DateRangeProps> = ({
+    fromMeta,
+    fromMonth,
+    fromYear,
+    toMeta,
+    toMonth,
+    toYear,
+    className,
+}) => {
     return (
-        <p className={clsx("text-sm uppercase text-zinc-400/80", className)}>
-            {fromMonth && <span>{fromMonth} </span>}
-            {fromYear && <span>{fromYear} &mdash; </span>}
-            {toMonth && <span>{toMonth} </span>}
-            {toYear && <span>{toYear}</span>}
+        <p
+            className={clsx("mb-2 w-fit text-xs uppercase text-stone-400/80", className)}
+            aria-label={`${fromMonth} ${fromYear} to ${toMonth} ${toYear}`}
+        >
+            <time dateTime={fromMeta}>
+                {fromMonth} {fromYear}
+            </time>
+            <span className="px-1">&mdash;</span>
+            <time dateTime={toMeta}>
+                {toMonth} {toYear}
+            </time>
         </p>
     );
 };
@@ -40,60 +57,63 @@ export const ExperienceItem: FC<ExperienceItemProps> = ({
     skills,
 }) => {
     return (
-        <li>
+        <li className="md:flex md:gap-x-6">
+            <DateRange
+                {...dateRange}
+                className="md:mt-1.5 md:min-w-max"
+            />
             <div>
-                <DateRange
-                    {...dateRange}
-                    className="mb-2"
-                />
-                <h4 className="mb-2 text-lg">
+                <h4 className="mb-2 text-lg font-medium">
                     {jobTitle} @{" "}
                     <a
                         href={companyUrl}
                         referrerPolicy="no-referrer"
                         target="_blank"
-                        className="hover:underline"
+                        className="group relative pr-1 hover:text-emerald-300"
+                        aria-label={companyName}
                     >
-                        {companyName} <span className="text-md">&#8599;</span>
+                        {companyName}{" "}
+                        <ArrowTopRightIcon className="absolute -right-4 bottom-0 h-4 w-4 transition-all group-hover:-right-[1.125rem] group-hover:bottom-0.5 group-hover:text-emerald-300" />
                     </a>
                 </h4>
-                <p className="mb-4 text-md text-zinc-200/80">{description}</p>
-                {skills && <SkillsCloud skills={skills} />}
+                <div>
+                    <p className="mb-4 text-md text-stone-200/80">{description}</p>
+                    {skills && <SkillsCloud skills={skills} />}
+                </div>
             </div>
         </li>
     );
 };
 
-export const ExperienceSection: FC = () => {
+export interface ExperienceSectionProps {
+    id: string;
+    title: string;
+    experienceItems: ExperienceItemProps[];
+    className?: string;
+}
+
+export const ExperienceSection: FC<ExperienceSectionProps> = ({ id, title, experienceItems, className }) => {
     return (
-        <Section
-            id="experience"
-            title="Experience"
+        <section
+            id={id}
+            className={className}
         >
+            <HeadingTwo className="mb-8">{title}</HeadingTwo>
             <ul className="mb-8 space-y-12">
-                <ExperienceItem
-                    companyName="Coding Temple"
-                    companyUrl="https://codingtemple.com"
-                    dateRange={{ fromMonth: "Oct", fromYear: "2022", toMonth: "Nov", toYear: "2023" }}
-                    jobTitle="Developer"
-                    description="Delivered and maintained version 2.0 of the Coding Temple website. Worked closely with the marketing team to enhance SEO and improve accessibility, performance, and user experience."
-                    skills={["PHP", "WordPress", "MySQL", "TypeScript", "SCSS", "Figma", "Adobe Illustrator"]}
-                />
-                <ExperienceItem
-                    companyName="Coding Temple"
-                    companyUrl="https://codingtemple.com"
-                    dateRange={{ fromMonth: "Jan", fromYear: "2023", toMonth: "Nov", toYear: "2023" }}
-                    jobTitle="Instructor"
-                    description="Taught students the fundamentals of full-stack web development. Designed and delivered lectures, assignments, and assessments. Provided students with feedback on their work and helped them prepare for technical interviews."
-                    skills={["TypeScript", "React", "CSS", "Python", "Flask", "PostgreSQL", "Figma", "Postman"]}
-                />
+                {experienceItems &&
+                    experienceItems.map((item, idx) => (
+                        <ExperienceItem
+                            key={idx}
+                            {...item}
+                        />
+                    ))}
             </ul>
             <Link
                 href="/resume"
-                className="text-base hover:underline"
+                className="flex items-center gap-2 text-base hover:underline"
             >
-                View full résumé &rarr;
+                Download full résumé <DownloadIcon className="-mt-1 h-5 w-5" />
             </Link>
-        </Section>
+        </section>
     );
 };

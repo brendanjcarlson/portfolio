@@ -13,9 +13,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html
             lang="en"
-            className="min-h-screen overflow-x-hidden scroll-smooth bg-indigo-950 leading-relaxed text-white"
+            className="min-h-screen overflow-x-hidden scroll-smooth bg-stone-900 leading-relaxed text-stone-100 antialiased"
         >
-            <body className={`${open_sans.className} flex min-h-screen flex-col overflow-x-hidden`}>{children}</body>
+            <body className={`${open_sans.className} min-h-screen overflow-x-hidden`}>{children}</body>
         </html>
     );
 }
