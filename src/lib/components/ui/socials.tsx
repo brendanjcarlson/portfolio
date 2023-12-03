@@ -7,7 +7,7 @@ import { FC } from "react";
 export type SocialIconLinkItemProps = {
     item: {
         href: string;
-        label: string;
+        title: string;
         icon: typeof GitHubLogoIcon;
     };
 };
@@ -15,12 +15,12 @@ export type SocialIconLinkItemProps = {
 const socials = [
     {
         href: "https://www.linkedin.com/in/brendanjcarlson",
-        label: "LinkedIn",
+        title: "LinkedIn",
         icon: LinkedInLogoIcon,
     },
     {
         href: "https://github.com/brendanjcarlson",
-        label: "GitHub",
+        title: "GitHub",
         icon: GitHubLogoIcon,
     },
 ];
@@ -31,7 +31,7 @@ export const Socials: FC = () => {
             <ul className="flex gap-5 pt-12">
                 {socials.map((item) => (
                     <SocialIconLinkItem
-                        key={item.label}
+                        key={item.title}
                         item={item}
                     />
                 ))}
@@ -46,7 +46,11 @@ export const SocialIconLinkItem: FC<SocialIconLinkItemProps> = ({ item }) => {
             <Tooltip.Provider delayDuration={500}>
                 <Tooltip.Root>
                     <Tooltip.Trigger asChild>
-                        <a href={item.href}>
+                        <a
+                            href={item.href}
+                            aria-label={item.title}
+                            target="_blank"
+                        >
                             <item.icon className="h-7 w-7 text-stone-200/80 hover:text-emerald-300 md:h-8 md:w-8" />
                         </a>
                     </Tooltip.Trigger>
@@ -56,7 +60,7 @@ export const SocialIconLinkItem: FC<SocialIconLinkItemProps> = ({ item }) => {
                             side="top"
                             sideOffset={4}
                         >
-                            <span className="font-medium">{item.label}</span>
+                            <span className="font-medium">{item.title}</span>
                             <Tooltip.Arrow className="fill-stone-100" />
                         </Tooltip.Content>
                     </Tooltip.Portal>
