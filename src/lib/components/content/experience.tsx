@@ -1,43 +1,10 @@
 import { SkillsCloud } from "@/lib//components/skill-cloud";
 import { HeadingTwo } from "@/lib/components/typography";
-import { ArrowTopRightIcon, DownloadIcon } from "@radix-ui/react-icons";
-import clsx from "clsx";
+import { DownloadIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { FC } from "react";
-
-export interface DateRangeProps {
-    fromMeta: string;
-    fromMonth: string;
-    fromYear: string;
-    toMeta: string;
-    toMonth: string;
-    toYear: string;
-    className?: string;
-}
-export const DateRange: FC<DateRangeProps> = ({
-    fromMeta,
-    fromMonth,
-    fromYear,
-    toMeta,
-    toMonth,
-    toYear,
-    className,
-}) => {
-    return (
-        <p
-            className={clsx("mb-2 w-fit text-xs uppercase text-stone-400/80", className)}
-            aria-label={`${fromMonth} ${fromYear} to ${toMonth} ${toYear}`}
-        >
-            <time dateTime={fromMeta}>
-                {fromMonth} {fromYear}
-            </time>
-            <span className="px-1">&mdash;</span>
-            <time dateTime={toMeta}>
-                {toMonth} {toYear}
-            </time>
-        </p>
-    );
-};
+import { LinkArrow } from "../link-arrow";
+import { DateRange, DateRangeProps } from "../ui/date-range";
 
 export interface ExperienceItemProps {
     jobTitle: string;
@@ -65,16 +32,10 @@ export const ExperienceItem: FC<ExperienceItemProps> = ({
             <div>
                 <h4 className="mb-2 text-lg font-medium">
                     {jobTitle} @{" "}
-                    <a
+                    <LinkArrow
                         href={companyUrl}
-                        referrerPolicy="no-referrer"
-                        target="_blank"
-                        className="group relative pr-1 hover:text-emerald-300"
-                        aria-label={companyName}
-                    >
-                        {companyName}{" "}
-                        <ArrowTopRightIcon className="absolute -right-4 bottom-0 h-4 w-4 transition-all group-hover:-right-[1.125rem] group-hover:bottom-0.5 group-hover:text-emerald-300" />
-                    </a>
+                        title={companyName}
+                    />
                 </h4>
                 <div>
                     <p className="mb-4 text-md text-stone-200/80">{description}</p>

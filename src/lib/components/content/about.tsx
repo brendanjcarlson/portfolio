@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { FC } from "react";
-import { HeadingTwo, Paragraph } from "../components/typography";
+import { HeadingTwo, Paragraph } from "../typography";
 
 export interface AboutSectionProps {
     id: string;

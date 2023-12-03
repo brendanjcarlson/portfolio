@@ -1,7 +1,7 @@
-import { AboutSection, AboutSectionProps } from "@/lib/content/about";
-import { ExperienceSection, ExperienceSectionProps } from "@/lib/content/experience";
-import { HeroSection, HeroSectionProps } from "@/lib/content/hero";
-import { ProjectsSection } from "@/lib/content/projects";
+import { AboutSection, AboutSectionProps } from "@/lib/components/content/about";
+import { ExperienceSection, ExperienceSectionProps } from "@/lib/components/content/experience";
+import { HeroSection, HeroSectionProps } from "@/lib/components/content/hero";
+import { ProjectsSection } from "@/lib/components/content/projects";
 
 const heroSectionContent: HeroSectionProps = {
     name: "Brendan J. Carlson",

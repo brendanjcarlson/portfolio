@@ -1,6 +1,7 @@
 import { FC } from "react";
-import { Section, SectionContent } from "../components/layout";
-import { SkillsCloud } from "../components/skill-cloud";
+import { Section, SectionContent } from "../layout";
+import { LinkArrow } from "../link-arrow";
+import { SkillsCloud } from "../skill-cloud";
 
 export interface ProjectItemProps {
     kind: "Web application" | "Mobile application" | "Desktop application" | "Library" | "API" | "Other";
@@ -24,13 +25,12 @@ export const ProjectItem: FC<ProjectItemProps> = ({
     return (
         <li>
             <p className="mb-2 text-sm uppercase text-stone-400/80">{kind}</p>
-            <a
-                href={liveUrl}
-                target="_blank"
-                className="mb-2 flex items-center gap-2 leading-none text-white hover:underline"
-            >
-                <h4 className="text-lg ">{title}</h4> <span className="text-md">&#8599;</span>
-            </a>
+            <h4 className="text-lg text-stone-50">
+                <LinkArrow
+                    href={gitHubUrl}
+                    title={title}
+                />
+            </h4>
             <p className="mb-4 text-md">{description}</p>
             <img
                 src={imageUrl}
