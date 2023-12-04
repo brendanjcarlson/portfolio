@@ -22,7 +22,7 @@ const Page: FC = () => {
                     <p>
                         In 2022, I decided it was time to take on something new. I took a swing at learning to code and
                         just 3 months in I found myself teaching others how to take on the wild world of development.
-                        Fast-forward to today, I have taught hundreds of students to code and have had the privelege of
+                        Fast-forward to today, I have taught hundreds of students to code and have had the privilege of
                         re-imagining the website for the bootcamp who taught me to code in the first place.
                     </p>
                     <p>
