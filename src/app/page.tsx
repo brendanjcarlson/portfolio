@@ -149,8 +149,8 @@ const Page: FC = () => {
                                     needed to become a professional developer.
                                 </p>
                                 <Image
-                                    src="/pocketpulse.jpg"
-                                    alt="PocketPulse thumbnail"
+                                    src="/codejourney.jpg"
+                                    alt="CodeJourney thumbnail"
                                     width={180}
                                     height={101}
                                     className="rounded-md border-2 border-stone-200/20"
