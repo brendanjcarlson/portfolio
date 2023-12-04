@@ -3,7 +3,7 @@ import { DateRange } from "@/lib/components/ui/date-range";
 import { LinkArrow } from "@/lib/components/ui/link-arrow";
 import { SkillsCloud } from "@/lib/components/ui/skill-cloud";
 import { Socials } from "@/lib/components/ui/socials";
-import { DownloadIcon } from "@radix-ui/react-icons";
+import { DownloadIcon, EnvelopeOpenIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -122,7 +122,7 @@ const Page: FC = () => {
                     </li>
                 </ul>
                 <a
-                    href="/pocketpulse.jpg"
+                    href="/Brendan Carlson - Resume.pdf"
                     download
                     className="group inline-flex items-center gap-x-1 font-medium hover:text-emerald-300"
                 >
@@ -137,16 +137,16 @@ const Page: FC = () => {
                                 <h4 className="mb-2 w-fit text-xs uppercase text-stone-400/80">Web Application</h4>
                                 <h3 className="mb-2 text-lg font-medium">
                                     <LinkArrow
-                                        title="PocketPulse"
-                                        href="https://github.com/brendanjcarlson/pocketpulse"
+                                        title="CodeJouney"
+                                        href="https://github.com/brendanjcarlson/codejourney"
                                         target="_blank"
                                     />
                                 </h3>
                             </header>
                             <div className="space-y-4">
                                 <p className="text-md text-stone-200/80">
-                                    A clean and minimalistic budgeting application designed to make managing expenses
-                                    easy.
+                                    A gamified learning management system for novice developers to gain the skills
+                                    needed to become a professional developer.
                                 </p>
                                 <Image
                                     src="/pocketpulse.jpg"
@@ -182,11 +182,20 @@ const Page: FC = () => {
                                     height={101}
                                     className="rounded-md border-2 border-stone-200/20"
                                 />
-                                <SkillsCloud skills={["Flask", "Python", "SCSS", "PostgreSQL"]} />
+                                <SkillsCloud skills={["Flask", "Python", "CSS", "PostgreSQL"]} />
                             </div>
                         </div>
                     </li>
                 </ul>
+            </Section>
+            <Section title="Contact">
+                <a
+                    href="mailto:brendanjcarlson1125@gmail.com"
+                    download
+                    className="group inline-flex items-center gap-x-2 font-medium hover:text-emerald-300"
+                >
+                    Say hello! <EnvelopeOpenIcon className="inline-block h-4 w-4" />
+                </a>
             </Section>
         </main>
     );
