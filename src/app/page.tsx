@@ -190,7 +190,7 @@ const Page: FC = () => {
             </Section>
             <Section title="Contact">
                 <a
-                    href="mailto:brendanjcarlson1125@gmail.com"
+                    href="mailto:brendancarlson1125@gmail.com"
                     download
                     className="group inline-flex items-center gap-x-2 font-medium hover:text-emerald-300"
                 >
