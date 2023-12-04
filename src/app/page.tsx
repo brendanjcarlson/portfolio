@@ -137,7 +137,7 @@ const Page: FC = () => {
                                 <h4 className="mb-2 w-fit text-xs uppercase text-stone-400/80">Web Application</h4>
                                 <h3 className="mb-2 text-lg font-medium">
                                     <LinkArrow
-                                        title="CodeJouney"
+                                        title="CodeJourney"
                                         href="https://github.com/brendanjcarlson/codejourney"
                                         target="_blank"
                                     />
