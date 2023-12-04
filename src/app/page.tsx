@@ -191,7 +191,6 @@ const Page: FC = () => {
             <Section title="Contact">
                 <a
                     href="mailto:brendancarlson1125@gmail.com"
-                    download
                     className="group inline-flex items-center gap-x-2 font-medium hover:text-emerald-300"
                 >
                     Say hello! <EnvelopeOpenIcon className="inline-block h-4 w-4" />
